@@ -1,11 +1,11 @@
 {
   "name": "spa-demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "H5内置控件",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "housuhong2017",
   "license": "ISC"
 }
