@@ -1,30 +1,57 @@
-$(function(){
-/*  var xData = [],
-      yData = [];
-for(var i = 0; i<= 1; i+=0.1){
+$(function() {
+  var xData = [],
+yData = [];
+
+for(var i = 0; i <= 1; i += 0.2) {
   xData.push(roundFractional(i, 1));
   yData.push(roundFractional(h(i), 2));
-}*/
 
+}
+
+/* global echarts: true */
 var myChart = echarts.init($('.main').get(0));
+
 var option = {
   title: {
-    text: 'ECharts 入门示例'
+    text: 'ECharts入门示例'
+
   },
-  tooltip: {},
-  legend: {
-    data:['销量']
-  },
+tooltip: {},
+legend: {
+  data:['信息量']
+
+},
   xAxis: {
-    data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+    data: xData
+
   },
   yAxis: {},
   series: [{
-    name: '销量',
-    type: 'bar',
-    data: [5, 20, 36, 10, 10, 20]
+    name: '信息量',
+    type: 'line',
+    smooth: 'true',
+    data: yData
+
   }]
-        
+
 };
+
 myChart.setOption(option);
+
+function roundFractional(x, n) {
+  return Math.round(x * Math.pow(10, n)) / Math.pow(10, n);
+
+}
+
+function h(p) {
+  return -1 * (plog(p) + plog(1 - p));
+
+}
+
+function plog(p) {
+  return (p === 0)? 0 : p * Math.log2(p);
+
+}
+
 });
+

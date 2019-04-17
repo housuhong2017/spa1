@@ -1,14 +1,11 @@
 $(function(){
-  var $progess = $('progess');
-  var timer = 0;
-  var i = 0;
-
-  $(`#start-button`).click(function(){
-    if(timer !==0)
-      return;
-  timer = window.setInterval(function(){
-    $progess.attr('value',i++);
-  },100);
-  } );
+    var t=$("progress"),n=0,c=0;
+    $("#begin").click(function(){
+      0===n&&(n=window.setInterval(function(){
+              t.attr("value",c++)
+      },500))
+    }),
+        $("#pause").click(function(){window.clearInterval(n),n=0}),
+  $("#reset").click(function(){t.attr("value",c=0)})
 
 });
